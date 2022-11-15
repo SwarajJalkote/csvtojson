@@ -4,7 +4,7 @@ import typing
 import traceback
 
 
-def read_csv_file(input_file, input_del, column_names):
+def read_csv_file(input_file, input_del, column_names) -> pd.DataFrame:
     '''
     This function reads the csv file and takes column_names parameter to filter out the data.\n
     Description:
@@ -29,7 +29,7 @@ def read_csv_file(input_file, input_del, column_names):
     else:
         traceback.print_exc()
         raise Exception("Input file is incorrect. Check the extension. e.g. input_file.csv")
-    return []
+    return pd.DataFrame()
 
 def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
     '''
@@ -49,7 +49,7 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
 
         for row in csv_data.itertuples(index=False):
             temp = {}
-            for key, row in zip(column_names, list(i)):
+            for key, row in zip(column_names, list(row)):
                 temp[key] = row
             json_data.append(temp)
        
@@ -59,7 +59,7 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
 
     return json.dumps(json_data, indent=4)
 
-    
+
 if __name__ == "__main__":
 
     input_file = "input_file.csv"
