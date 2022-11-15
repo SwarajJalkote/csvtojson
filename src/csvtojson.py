@@ -40,6 +40,7 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
         column_names: list of names of columns which you want to extract from csv
     '''
     csv_data = read_csv_file(input_file, input_del, column_names)
+    json_data = {}
     if csv_data != []:
         column_names = list(csv_data)
         for indx, col in enumerate(column_names):
@@ -47,11 +48,18 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
                 column_names[indx] = f"col{indx}"
 
         for row in csv_data.itertuples(index=False):
-            pass
-        
+            temp = {}
+            for key, row in zip(column_names, list(i)):
+                temp[key] = row
+            json_data.append(temp)
+       
     else:
         pass
 
+
+    return json.dumps(json_data, indent=4)
+
+    
 if __name__ == "__main__":
 
     input_file = "input_file.csv"
