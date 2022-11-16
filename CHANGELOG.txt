@@ -4,3 +4,7 @@ Change Log
 1.0.0 (2022-11-14)
 -------------------
 - Planning the library creation
+
+1.1.0 (2022-11-16)
+-------------------
+- Added the functionality to convert csv file into json
