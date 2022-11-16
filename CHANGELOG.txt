@@ -8,3 +8,7 @@ Change Log
 1.1.0 (2022-11-16)
 -------------------
 - Added the functionality to convert csv file into json
+
+1.1.1 (2022-11-16)
+-------------------
+- [FIX] Source code files were not included in the final distribution

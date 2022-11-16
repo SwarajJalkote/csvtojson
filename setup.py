@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='csvtojsonlib',
-  version='1.1.0',
+  version='1.1.1',
   description='CSV to JSON convertor with additional options to make the conversion more efficient and flexibility to add or remove columns from the conversion',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='https://github.com/SwarajJalkote/csvtojson.git',  
