@@ -54,15 +54,12 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
             json_data.append(temp)
     else:
         return f"Input_File: {input_file} is empty"
-
-
     return json.dumps(json_data, indent=4)
+    
+# if __name__ == "__main__":
 
-
-if __name__ == "__main__":
-
-    input_file = "input_file.cs"
-    input_del = ","
-    json_data = csv_to_json(input_file, input_del, column_names=['Rank in India','Changes Rank from last Year','Forbes 2000 rank in World','Changes Rank from last Year','Name','Headquarters'])
-    with open("output_data.json", 'w') as f:
-        f.write(json_data)
+#     input_file = "input_file.cs"
+#     input_del = ","
+#     json_data = csv_to_json(input_file, input_del, column_names=['Rank in India','Changes Rank from last Year','Forbes 2000 rank in World','Changes Rank from last Year','Name','Headquarters'])
+#     with open("output_data.json", 'w') as f:
+#         f.write(json_data)
