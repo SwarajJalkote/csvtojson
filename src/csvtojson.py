@@ -12,7 +12,7 @@ def read_csv_file(input_file, input_del, column_names) -> pd.DataFrame:
         input_del: delimiter used in input file. Default: , (comma)
         column_names: list of names of columns which you want to extract from csv
     '''
-    if input_file.endswith() != ".csv":
+    if input_file.endswith(".csv"):
         if column_names != []:
             return pd.read_csv(filepath_or_buffer=input_file, 
                                 sep=input_del,
@@ -40,8 +40,8 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
         column_names: list of names of columns which you want to extract from csv
     '''
     csv_data = read_csv_file(input_file, input_del, column_names)
-    json_data = {}
-    if csv_data != []:
+    json_data = []
+    if csv_data.empty == False:
         column_names = list(csv_data)
         for indx, col in enumerate(column_names):
             if "Unnamed" in col:
@@ -52,9 +52,8 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
             for key, row in zip(column_names, list(row)):
                 temp[key] = row
             json_data.append(temp)
-       
     else:
-        pass
+        return f"Input_File: {input_file} is empty"
 
 
     return json.dumps(json_data, indent=4)
@@ -62,7 +61,8 @@ def csv_to_json(input_file, input_del=",", column_names=list()) -> str:
 
 if __name__ == "__main__":
 
-    input_file = "input_file.csv"
+    input_file = "input_file.cs"
     input_del = ","
-    json_data = csv_to_json(input_file, input_del, column_names=[])
-
+    json_data = csv_to_json(input_file, input_del, column_names=['Rank in India','Changes Rank from last Year','Forbes 2000 rank in World','Changes Rank from last Year','Name','Headquarters'])
+    with open("output_data.json", 'w') as f:
+        f.write(json_data)
