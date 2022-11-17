@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from csvtojson import read_csv_file, csv_to_json
+from src.csvtojsonlib import read_csv_file, csv_to_json
 
 def test_read_csv_file():
     df = {

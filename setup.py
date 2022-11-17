@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
  
 classifiers = [
-  'Development Status :: 4 - Beta',
+  'Development Status :: 5 - Production/Stable',
   'Intended Audience :: Developers',
   'Operating System :: Microsoft :: Windows :: Windows 11',
   'License :: OSI Approved :: MIT License',
@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='csvtojsonlib',
-  version='1.1.1',
+  version='1.1.3',
   description='CSV to JSON convertor with additional options to make the conversion more efficient and flexibility to add or remove columns from the conversion',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='https://github.com/SwarajJalkote/csvtojson.git',  
