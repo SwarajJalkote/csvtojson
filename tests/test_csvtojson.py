@@ -39,3 +39,8 @@ def test_csv_to_json():
     x = csv_to_json("input_file.csv", ",", column_names=[])
     x = json.loads(x)
     assert assert_json == x
+
+
+def test_read_csv_file_exception():
+    with pytest.raises(Exception, match="Input file is incorrect. Check the extension. e.g. input_file.csv"):
+        read_csv_file("Input.cs", ",", [])
